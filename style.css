@@ -1,0 +1,50 @@
+
+/* Base */
+* { box-sizing: border-box; font-family: system-ui, Segoe UI, Arial; }
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --border: #374151;
+  --text: #e2e8f0;
+  --muted: #9ca3af;
+  --primary: #3b82f6;
+  --success: #10b981;
+  --danger: #ef4444;
+  --neutral: #6b7280;
+  --accent: #93c5fd;
+}
+body { background: var(--bg); color: var(--text); margin: 0; padding: 2rem; }
+
+.container {
+  max-width: 780px; margin: 0 auto; background: var(--card);
+  border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem 1.25rem;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+}
+h1 { margin: 0 0 0.25rem; font-size: 1.8rem; letter-spacing: .2px; }
+.sub { margin: 0 0 1rem; color: var(--muted); }
+
+label { display:block; margin: 1rem 0 0.3rem; color: var(--accent); font-weight: 600; }
+select, input[type="text"], input[type="number"], textarea {
+  width: 100%; padding: 0.8rem; border-radius: 10px; border: 1px solid var(--border);
+  background: #1f2937; color: var(--text); outline: none;
+}
+select:focus, input:focus, textarea:focus { border-color: var(--primary); }
+
+textarea { min-height: 140px; resize: vertical; }
+.options { margin-top: 0.5rem; }
+.hidden { display: none; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0; }
+button {
+  padding: 0.7rem 1rem; border: none; border-radius: 10px;
+  background: var(--primary); color: white; cursor: pointer; font-weight: 600;
+  transition: transform .05s ease, filter .15s ease;
+}
+button:hover { filter: brightness(1.08); }
+button:active { transform: scale(0.99); }
+
+button.secondary { background: var(--success); }
+button.danger { background: var(--danger); }
+button.neutral { background: var(--neutral); }
+
+.note { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
