@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Encryption & Decryption Tool</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- CryptoJS CDN for AES -->
+  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.2.0/crypto-js.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Encryption & Decryption Tool</h1>
+    <p class="sub">Caesar Cipher & AES (CryptoJS)</p>
+
+    <label for="algorithm">Algorithm</label>
+    <select id="algorithm">
+      <option value="caesar">Caesar Cipher</option>
+      <option value="aes">AES (CryptoJS)</option>
+    </select>
+
+    <label for="inputText">Text</label>
+    <textarea id="inputText" placeholder="Enter plain text or ciphertext..."></textarea>
+
+    <div id="caesarOptions" class="options">
+      <label for="shift">Shift (Caesar)</label>
+      <input type="number" id="shift" value="3" min="1" max="25"/>
+    </div>
+
+    <div id="aesOptions" class="options hidden">
+      <label for="secretKey">Secret Key (AES)</label>
+      <input type="text" id="secretKey" placeholder="Enter secret key"/>
+      <label for="aesMode">AES Mode</label>
+      <select id="aesMode">
+        <option value="CFB">CFB (default)</option>
+        <option value="CBC">CBC</option>
+        <option value="CTR">CTR</option>
+      </select>
+    </div>
+
+    <div class="actions">
+      <button id="encryptBtn">Encrypt</button>
+      <button id="decryptBtn" class="secondary">Decrypt</button>
+      <button id="copyBtn" class="neutral">Copy Output</button>
+      <button id="clearBtn" class="danger">Clear</button>
+    </div>
+
+    <label for="outputText">Output</label>
+    <textarea id="outputText" placeholder="Result..." readonly></textarea>
+
+    <p class="note">
+      ⚠️ Demo purpose only. Caesar Cipher is not secure. AES with a strong key is recommended for real use.
+    </p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
